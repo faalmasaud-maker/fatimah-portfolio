@@ -1,0 +1,489 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Thmanyah — Arabic type.
+   Drop the .woff2 files into /public/fonts/thmanyah/.
+   Until then Arabic falls back to Tajawal, which is what the
+   identity mockups use.
+   ============================================================ */
+
+@font-face {
+  font-family: "ThmanyahDisplay";
+  src: url("/fonts/thmanyah/ThmanyahDisplay-Light.woff2") format("woff2");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahDisplay";
+  src: url("/fonts/thmanyah/ThmanyahDisplay-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahDisplay";
+  src: url("/fonts/thmanyah/ThmanyahDisplay-Medium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahDisplay";
+  src: url("/fonts/thmanyah/ThmanyahDisplay-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahDisplay";
+  src: url("/fonts/thmanyah/ThmanyahDisplay-Black.woff2") format("woff2");
+  font-weight: 900; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahText";
+  src: url("/fonts/thmanyah/ThmanyahText-Light.woff2") format("woff2");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahText";
+  src: url("/fonts/thmanyah/ThmanyahText-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "ThmanyahText";
+  src: url("/fonts/thmanyah/ThmanyahText-Medium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+
+
+/* ============================================================
+   Ampersand override.
+   Playfair Display draws U+0026 as an ornate calligraphic glyph that reads
+   as a different typeface next to the rest of a heading. This maps ONLY the
+   ampersand to a plain sans, so "Tools & systems" keeps a normal &.
+   If no local face matches, it falls through to Playfair unchanged.
+   ============================================================ */
+@font-face {
+  font-family: "PlainAmp";
+  src: local("Helvetica Neue"), local("Helvetica"), local("Arial"),
+       local("Segoe UI"), local("Roboto"), local("Liberation Sans"),
+       local("DejaVu Sans");
+  unicode-range: U+0026;
+}
+
+/* ============================================================
+   Token system — navy identity.
+   Brand sheet: #0A1A33  #12264D  #1E3A67  #A8B5D6  #E6EBF5  #FFFFFF
+   Dark canvas #0B0F17, surface #121826.
+   ============================================================ */
+
+:root,
+.dark {
+  color-scheme: dark;
+
+  /* Deep Navy / Midnight Blue / layered elevation */
+  --bg-base: 216 60% 10%;
+  --bg-surface: 221 52% 14%;
+  --bg-elevated: 221 46% 19%;
+  --bg-invert: 216 43% 97%;
+
+  /* Frost White -> Glass Gray */
+  --ink-primary: 216 43% 98%;
+  --ink-secondary: 219 26% 82%;
+  --ink-muted: 221 16% 66%;
+  --ink-subtle: 221 14% 48%;
+  --ink-invert: 216 60% 10%;
+
+  /* Accent Blue / Soft Indigo */
+  --accent: 220 85% 70%;
+  --accent-deep: 227 45% 45%;
+
+  --grad-1: 216 60% 12%;
+  --grad-2: 221 55% 20%;
+  --grad-3: 227 45% 34%;
+
+  --edge: 220 26% 26%;
+  --edge-strong: 220 24% 38%;
+  --edge-subtle: 220 34% 18%;
+
+  --glass-tint: 221 50% 15%;
+  --glass-alpha: 0.58;
+  --glass-blur: 26px;
+
+  /* Signature background intensity */
+  --mesh-a: 0.72;
+  --mesh-b: 0.58;
+  --trail: 0.62;
+  --wave-1: 0.6;
+  --wave-2: 0.32;
+  --wave-ribbon: 0.24;
+
+  --font-arabic-fallback: var(--font-tajawal), "SF Arabic", system-ui, sans-serif;
+}
+
+.light {
+  color-scheme: light;
+
+  /* No pure white anywhere. Three layered surfaces give real elevation:
+     #EEF2F8 canvas -> #F6F7FA card -> #FAFAFB raised. */
+  --bg-base: 215 43% 95%;
+  --bg-surface: 225 27% 97%;
+  --bg-elevated: 240 11% 98%;
+  --bg-invert: 216 60% 10%;
+
+  --ink-primary: 216 60% 12%;
+  --ink-secondary: 219 28% 28%;
+  --ink-muted: 220 18% 40%;
+  --ink-subtle: 220 16% 58%;
+  --ink-invert: 216 43% 98%;
+
+  --accent: 220 78% 40%;
+  --accent-deep: 227 55% 30%;
+
+  --grad-1: 215 50% 90%;
+  --grad-2: 220 52% 78%;
+  --grad-3: 227 50% 62%;
+
+  --edge: 215 28% 85%;
+  --edge-strong: 215 24% 72%;
+  --edge-subtle: 215 34% 90%;
+
+  --glass-tint: 240 20% 99%;
+  --glass-alpha: 0.62;
+  --glass-blur: 24px;
+
+  --mesh-a: 0.66;
+  --mesh-b: 0.54;
+  --trail: 0.52;
+  --wave-1: 0.5;
+  --wave-2: 0.3;
+  --wave-ribbon: 0.22;
+}
+
+@layer base {
+  * {
+    @apply border-edge;
+  }
+
+  html {
+    /* Everything is rem-based, so this lifts the whole type scale ~6%. */
+    font-size: 17px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg-base text-ink-primary antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Fixed gradient wash behind everything.
+     Implemented as a position:fixed layer rather than
+     background-attachment:fixed, which iOS Safari renders unreliably. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Anchored to the corners and edges, never floating in the middle, so
+     nothing reads as a circle. Light alphas verified against text contrast:
+     ink-muted holds 4.68:1 on the darkest stacked point. */
+  .light body::before {
+    background-image:
+      radial-gradient(90% 62% at 100% 0%, hsl(var(--grad-3) / 0.28), transparent 68%),
+      radial-gradient(80% 58% at 0% 100%, hsl(var(--grad-2) / 0.24), transparent 70%),
+      linear-gradient(180deg, hsl(var(--grad-1) / 0.38) 0%, transparent 46%);
+  }
+
+  /* Carries the depth the floating blooms used to provide, but anchored to
+     the corners so nothing reads as a circle. Verified: ink-muted holds
+     5.36:1 at the brightest point where both washes stack. */
+  .dark body::before {
+    background-image:
+      radial-gradient(90% 62% at 100% 0%, hsl(var(--grad-3) / 0.44), transparent 68%),
+      radial-gradient(80% 58% at 0% 100%, hsl(var(--grad-2) / 0.36), transparent 70%);
+  }
+
+  /* English headings are editorial — Playfair Display, used with restraint. */
+  html[dir="ltr"] h1,
+  html[dir="ltr"] h2,
+  html[dir="ltr"] h3 {
+    /* PlainAmp covers only U+0026; everything else falls to Playfair. */
+    font-family: "PlainAmp", var(--font-playfair), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  html[dir="rtl"] body {
+    @apply font-thmanyah-text;
+  }
+
+  html[dir="rtl"] h1,
+  html[dir="rtl"] h2,
+  html[dir="rtl"] h3,
+  html[dir="rtl"] h4 {
+    @apply font-thmanyah-display;
+    letter-spacing: 0.01em;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg-base;
+  }
+
+  ::selection {
+    @apply bg-bg-invert text-ink-invert;
+  }
+}
+
+@layer utilities {
+  /* Navbar wordmark. These are the upper bounds; fitWordmark() in the navbar
+     measures the space the control pills actually leave and reduces from here
+     when needed, so locale and font changes cannot break the bar. */
+  .wordmark-fit {
+    white-space: nowrap;
+  }
+
+  html[dir="rtl"] .wordmark-fit {
+    font-size: 1.125rem;
+  }
+
+  html[dir="ltr"] .wordmark-fit {
+    font-size: 0.9375rem;
+  }
+
+  /* The display name never wraps. The vw formulas below are sized from the
+     measured width/font-size ratio of each script; fit-display-name in the
+     hero then verifies against the real metrics after fonts load, so
+     swapping in Thmanyah cannot break it. */
+  .display-name {
+    white-space: nowrap;
+  }
+
+  html[dir="rtl"] .display-name {
+    font-size: min(4.5rem, calc((100vw - 3rem) / 10.6));
+  }
+
+  html[dir="ltr"] .display-name {
+    font-size: min(4.5rem, calc((100vw - 3rem) / 6.7));
+  }
+
+  /* Stops font shaping from collapsing the tatweel in the display name. */
+  .keep-tatweel {
+    font-variant-ligatures: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display name — soft gradient fade into the accent tone. */
+  .ink-fade {
+    background-image: linear-gradient(
+      168deg,
+      hsl(var(--ink-primary)) 0%,
+      hsl(var(--ink-primary)) 46%,
+      hsl(var(--accent)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Subtle glassmorphism — tinted, blurred, hairline edge. */
+  .glass {
+    background-color: hsl(var(--glass-tint) / var(--glass-alpha));
+    /* Blur only. backdrop-filter with saturate() is a known source of
+       colour shifts on iOS Safari, which can read as a warm cast. */
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--edge) / 0.8);
+  }
+
+  .glass-strong {
+    background-color: hsl(var(--glass-tint) / 0.86);
+    backdrop-filter: blur(calc(var(--glass-blur) + 10px));
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 10px));
+    border: 1px solid hsl(var(--edge) / 0.9);
+  }
+
+  /* Navy gradient wash for feature surfaces. */
+  .grad-navy {
+    background-image: linear-gradient(
+      145deg,
+      hsl(var(--grad-1)) 0%,
+      hsl(var(--grad-2)) 55%,
+      hsl(var(--grad-3)) 100%
+    );
+  }
+
+  /* Brand panel — fixed navy in BOTH themes.
+     The gradient tokens flip to pale blue in light mode, which would leave
+     white text at ~2.2:1. This panel pins the brand values so anything
+     placed on it stays legible: white on these stops is 11.4:1 or better. */
+  .panel-brand {
+    background-image: linear-gradient(
+      145deg,
+      hsl(217 67% 12%) 0%,
+      hsl(220 62% 19%) 55%,
+      hsl(217 55% 26%) 100%
+    );
+  }
+
+  /* Primary button surface. White on dark (it pops against navy);
+     a navy gradient in light mode, which is where the colour is wanted. */
+  .btn-surface {
+    background-color: hsl(var(--bg-invert));
+    color: hsl(var(--ink-invert));
+  }
+
+  .btn-surface:hover {
+    background-color: hsl(var(--ink-secondary));
+  }
+
+  .light .btn-surface {
+    background-image: linear-gradient(
+      135deg,
+      hsl(217 67% 14%) 0%,
+      hsl(220 64% 24%) 52%,
+      hsl(217 58% 34%) 100%
+    );
+    color: #fff;
+  }
+
+  .light .btn-surface:hover {
+    background-image: linear-gradient(
+      135deg,
+      hsl(217 67% 18%) 0%,
+      hsl(220 64% 29%) 52%,
+      hsl(217 58% 39%) 100%
+    );
+  }
+
+  /* Nav pills (language, theme) pick up a faint tint in light mode. */
+  .light .pill-tint {
+    background-color: hsl(var(--grad-1) / 0.38);
+  }
+
+  .light .pill-tint:hover {
+    background-color: hsl(var(--grad-1) / 0.68);
+  }
+
+  /* Outlined button picks up a faint tint in light mode. */
+  .light .btn-outline-tint {
+    background-color: hsl(var(--grad-1) / 0.45);
+  }
+
+  .light .btn-outline-tint:hover {
+    background-color: hsl(var(--grad-1) / 0.75);
+  }
+
+  .btn-on-brand {
+    background-color: #fff;
+    color: hsl(217 67% 12%);
+  }
+
+  .btn-on-brand:hover {
+    background-color: rgb(255 255 255 / 0.85);
+  }
+
+  .grad-navy-soft {
+    background-image: linear-gradient(
+      145deg,
+      hsl(var(--grad-1) / 0.5) 0%,
+      hsl(var(--grad-2) / 0.4) 55%,
+      hsl(var(--grad-3) / 0.35) 100%
+    );
+  }
+
+  .hairline {
+    @apply h-px w-full bg-edge;
+  }
+
+  /* Buttons: subtle glow, depth on hover. */
+  .btn-glow {
+    box-shadow:
+      inset 0 1px 0 hsl(var(--ink-primary) / 0.12),
+      0 1px 2px hsl(var(--grad-1) / 0.3),
+      0 10px 28px -12px hsl(var(--accent) / 0.45);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.2s ease, background-color 0.2s ease, background-image 0.2s ease;
+  }
+
+  .btn-glow:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 hsl(var(--ink-primary) / 0.18),
+      0 2px 4px hsl(var(--grad-1) / 0.32),
+      0 18px 44px -14px hsl(var(--accent) / 0.6);
+  }
+
+  .btn-glow:active {
+    transform: translateY(0);
+  }
+
+  /* Cards: layered shadow rather than a single flat drop. */
+  .card-depth {
+    box-shadow:
+      0 1px 1px hsl(var(--grad-1) / 0.05),
+      0 4px 10px -4px hsl(var(--grad-1) / 0.12),
+      0 20px 44px -22px hsl(var(--grad-1) / 0.28);
+  }
+
+  .card-depth:hover {
+    box-shadow:
+      0 1px 1px hsl(var(--grad-1) / 0.06),
+      0 6px 16px -6px hsl(var(--grad-1) / 0.16),
+      0 28px 60px -26px hsl(var(--grad-1) / 0.36);
+  }
+
+  /* Opening moment — a navy field that blooms, draws a line of light,
+     then lifts away. No text, so nothing to read and nothing to mis-shape. */
+  .intro-veil {
+    animation: veil 1700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .intro-bloom {
+    animation: bloom 1700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .intro-line-en {
+    animation: lift 900ms cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+  }
+
+  .intro-rule {
+    animation: draw 1000ms cubic-bezier(0.22, 1, 0.36, 1) 260ms both;
+  }
+
+  .intro-line-ar {
+    animation: lift 900ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
+  }
+
+  @keyframes lift {
+    0% { opacity: 0; transform: translateY(14px); filter: blur(7px); }
+    100% { opacity: 1; transform: none; filter: none; }
+  }
+
+  @keyframes veil {
+    0%, 68% { opacity: 1; transform: scale(1); filter: blur(0); }
+    100% { opacity: 0; transform: scale(1.05); filter: blur(12px); visibility: hidden; }
+  }
+
+  @keyframes bloom {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.55); }
+    46% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0.35; transform: translate(-50%, -50%) scale(1.35); }
+  }
+
+  @keyframes draw {
+    0% { transform: scaleX(0); opacity: 0; }
+    55% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0.9; }
+  }
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

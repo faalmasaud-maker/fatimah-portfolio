@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "title": "Fatimah AL Masaud | Business Systems Analyst",
+    "description": "Business Systems Analyst bridging business needs and technical implementation. Systems analysis, workflow design, and data migration."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "membership": "Membership",
+    "projects": "Projects",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "switchLanguage": "Switch to Arabic",
+    "skills": "Skills",
+    "cv": "CV"
+  },
+  "hero": {
+    "name_display": "Fatimah AL Masaud",
+    "eyebrow": "Business Systems Analyst",
+    "tagline": "Where complexity becomes clarity.",
+    "subtitle": "Structured thinking and practical solutions that start with understanding the business, not the software.",
+    "ctaSecondary": "Get in touch",
+    "scroll": "Scroll",
+    "stats": {
+      "experience": {
+        "value": "2+",
+        "label": "Years of experience"
+      },
+      "sectors": {
+        "value": "6+",
+        "label": "Diverse sectors"
+      },
+      "documentation": {
+        "value": "50+",
+        "label": "Analysis & documentation"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "heading": "From requirement to system",
+    "paragraph1": "Bachelor's degree in Management Information Systems (MIS), College of Business, Imam Mohammad Ibn Saud Islamic University — graduated with Honors. Over two years of hands-on experience in systems analysis and solution development at an ICT company, working on diverse, complex projects.",
+    "paragraph2": "My work is bridging the gap between business needs and technical implementation: understanding what stakeholders actually need, translating it into workflows and functional logic a development team can build, and documentation an end user can rely on.",
+    "degreeBadge": "BSc Management Information Systems — Imam Mohammad Ibn Saud Islamic University, With Honors",
+    "pillars": {
+      "analysis": {
+        "title": "Precise analysis",
+        "body": "Breaking complex operations into clear requirements that can be built and measured."
+      },
+      "bridge": {
+        "title": "Point of connection",
+        "body": "Where stakeholders and developers meet in one shared language, which cuts rework."
+      },
+      "value": {
+        "title": "Visible change",
+        "body": "Change is never handed over on its own — it comes with training and guidance until it is clear and usable."
+      }
+    }
+  },
+  "membership": {
+    "eyebrow": "Accreditation",
+    "heading": "Professional membership",
+    "body": "Professional accreditation in Management Information Systems, issued by the Saudi Council of Engineers.",
+    "issuer": "Saudi Council of Engineers",
+    "issuerCode": "SCE",
+    "title": "Management Information Systems Specialist",
+    "linkLabel": "Visit the Council"
+  },
+  "projects": {
+    "eyebrow": "Work",
+    "heading": "Selected projects",
+    "body": "Real work drawn from professional experience — system builds, process improvement, data migration, documentation and training.",
+    "featuredLabel": "Featured",
+    "items": {
+      "erp": {
+        "title": "ERP modules built from scratch",
+        "description": "Contributed to building an in-house ERP system from the ground up, including HR, Requests, IT Support, and Asset Management modules — designing workflows and functional logic for each.",
+        "tags": [
+          "ERP Development",
+          "HR Module",
+          "Asset Management",
+          "IT Support Module"
+        ]
+      },
+      "hrms": {
+        "title": "HRMS & ERP process enhancement",
+        "description": "Analyzed and enhanced business processes across Jisr HRMS, Odoo, and the company's in-house ERP, translating operational needs into workflow design improvements.",
+        "tags": [
+          "Jisr HRMS",
+          "Odoo",
+          "Workflow Design",
+          "Process Enhancement"
+        ]
+      },
+      "migration": {
+        "title": "Data migration & integrity assurance",
+        "description": "Executed data migration from the Jisr platform to the internal system, including validation and backup across multiple servers to ensure data integrity and business continuity.",
+        "tags": [
+          "Data Migration",
+          "Validation",
+          "Backup Systems"
+        ]
+      },
+      "uat": {
+        "title": "UAT, documentation & training delivery",
+        "description": "Conducted User Acceptance Testing for the v1.0 to v2.0 system upgrade, prepared user manuals, and delivered training sessions to improve system adoption.",
+        "tags": [
+          "UAT",
+          "User Manuals",
+          "Training",
+          "Version Upgrade"
+        ]
+      },
+      "reporting": {
+        "title": "Reporting, dashboards & coding standards",
+        "description": "Developed operational reports and dashboards, and collaborated with the Governance Department to standardize file coding and documentation practices.",
+        "tags": [
+          "Dashboards",
+          "Reporting",
+          "Document Coding Standards"
+        ]
+      },
+      "cbahi": {
+        "title": "Automated website management system",
+        "description": "During a training program at the Saudi Central Board for Accreditation of Healthcare Institutions, simplified multi-department website updates by designing a centralized system managed by a single user, replacing scattered manual edits.",
+        "tags": [
+          "Website Automation",
+          "Centralized CMS",
+          "Process Simplification"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Let's talk",
+    "body": "Open to work that sits between business analysis and system building. For professional enquiries, email is the fastest way to reach me.",
+    "cta": "Send a message",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "linkedinValue": "Professional profile",
+    "locationLabel": "Location",
+    "locationValue": "Riyadh, Saudi Arabia"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "role": "Business Systems Analyst"
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "heading": "Skills & knowledge",
+    "body": "Analysis, documentation and process design, backed by data tools and ERP systems.",
+    "groups": {
+      "analysis": {
+        "title": "Analysis & studies",
+        "items": [
+          "Feasibility studies",
+          "SWOT analysis",
+          "Requirements analysis",
+          "Gap analysis",
+          "Operational process analysis",
+          "Stakeholder analysis"
+        ]
+      },
+      "reporting": {
+        "title": "Reporting & documentation",
+        "items": [
+          "Operational reports",
+          "Analytical reports",
+          "Interactive dashboards",
+          "Business requirements document (BRD)",
+          "Functional requirements document (FRD)",
+          "User manuals",
+          "UAT reports",
+          "Project tracking reports"
+        ]
+      },
+      "process": {
+        "title": "Process design & governance",
+        "items": [
+          "Software development lifecycle (SDLC)",
+          "Business flow design",
+          "Process modeling (BPMN)",
+          "Policy & procedure design",
+          "Roles & permissions matrix",
+          "Document coding standards",
+          "Process improvement"
+        ]
+      }
+    }
+  },
+  "cv": {
+    "eyebrow": "Résumé",
+    "heading": "Full CV",
+    "body": "A PDF covering experience, certifications and skills in detail.",
+    "download": "Download CV",
+    "fileMeta": "PDF · one page",
+    "updated": "Updated 2026",
+    "languages": "Languages: Arabic, English"
+  },
+  "tools": {
+    "eyebrow": "Tech stack",
+    "heading": "Tools & systems",
+    "body": "The systems and tools I use for analysis, modeling, documentation and reporting.",
+    "items": {
+      "erp": {
+        "name": "In-house ERP",
+        "role": "Internal systems"
+      },
+      "odoo": {
+        "name": "Odoo",
+        "role": "Enterprise resource planning"
+      },
+      "jisr": {
+        "name": "Jisr HRMS",
+        "role": "HR systems"
+      },
+      "powerbi": {
+        "name": "Power BI",
+        "role": "Dashboards & reporting"
+      },
+      "sql": {
+        "name": "SQL",
+        "role": "Databases"
+      },
+      "excel": {
+        "name": "Excel",
+        "role": "Analysis & models"
+      },
+      "figma": {
+        "name": "Figma",
+        "role": "Design & prototyping"
+      },
+      "miro": {
+        "name": "Miro",
+        "role": "Process modeling"
+      },
+      "canva": {
+        "name": "Canva",
+        "role": "Visual material"
+      },
+      "m365": {
+        "name": "Microsoft 365",
+        "role": "Documentation & collaboration"
+      },
+      "ai": {
+        "name": "AI tools & agents",
+        "role": "Applied AI"
+      },
+      "n8n": {
+        "name": "n8n",
+        "role": "Workflow automation"
+      }
+    }
+  },
+  "intro": {
+    "lineEn": "Where complexity becomes clarity.",
+    "lineAr": "حيث يتحول التعقيد إلى وضوح."
+  },
+  "roles": {
+    "eyebrow": "Opportunities",
+    "heading": "Roles I fit",
+    "body": "Titles that match my experience across business and systems analysis.",
+    "titles": [
+      "Business Systems Analyst",
+      "Business Analyst",
+      "Systems Analyst",
+      "Application Specialist",
+      "ERP Functional Consultant",
+      "IT Project Coordinator",
+      "Application Support Analyst",
+      "Digital Transformation Specialist",
+      "Process Improvement Specialist"
+    ]
+  }
+}
