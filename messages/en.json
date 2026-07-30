@@ -1,44 +1,48 @@
 {
-  "meta": {
-    "title": "Fatimah AL Masaud | Business Systems Analyst",
-    "description": "Business Systems Analyst bridging business needs and technical implementation. Systems analysis, workflow design, and data migration."
-  },
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "membership": "Membership",
-    "projects": "Projects",
-    "contact": "Contact",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "switchToLight": "Switch to light mode",
-    "switchToDark": "Switch to dark mode",
-    "switchLanguage": "Switch to Arabic",
-    "skills": "Skills",
-    "cv": "CV"
-  },
-  "hero": {
-    "name_display": "Fatimah AL Masaud",
-    "eyebrow": "Business Systems Analyst",
-    "tagline": "Where complexity becomes clarity.",
-    "subtitle": "Structured thinking and practical solutions that start with understanding the business, not the software.",
-    "ctaSecondary": "Get in touch",
-    "scroll": "Scroll",
-    "stats": {
-      "experience": {
-        "value": "2+",
-        "label": "Years of experience"
-      },
-      "sectors": {
-        "value": "6+",
-        "label": "Diverse sectors"
-      },
-      "documentation": {
-        "value": "50+",
-        "label": "Analysis & documentation"
-      }
-    }
-  },
+    "meta": {
+          "title": "Fatimah AL Masaud | Business Systems Analyst",
+          "description": "Business Systems Analyst bridging business needs and technical implementation. Systems analysis, workflow design, and data migration."
+    },
+    "nav": {
+          "home": "Home",
+          "about": "About",
+          "membership": "Membership",
+          "projects": "Projects",
+          "contact": "Contact",
+          "openMenu": "Open menu",
+          "closeMenu": "Close menu",
+          "switchToLight": "Switch to light mode",
+          "switchToDark": "Switch to dark mode",
+          "switchLanguage": "Switch to Arabic",
+          "skills": "Skills",
+          "cv": "CV"
+    },
+    "hero": {
+          "name_display": "Fatimah AL Masaud",
+          "eyebrow": "Business Systems Analyst",
+          "tagline": "Where complexity becomes clarity.",
+          "subtitle": "Structured thinking and practical solutions that start with understanding the business, not the software.",
+          "ctaSecondary": "Get in touch",
+          "scroll": "Scroll",
+          "stats": {
+                  "experience": {
+                            "value": "2+",
+                            "label": "Years of experience"
+                  },
+                  "modules": {
+                            "value": "5+",
+                            "label": "ERP modules delivered"
+                  },
+                  "systems": {
+                            "value": "3+",
+                            "label": "Systems worked with"
+                  },
+                  "trainings": {
+                            "value": "7+",
+                            "label": "Certifications & trainings"
+                  }
+          }
+    },
   "about": {
     "eyebrow": "About",
     "heading": "From requirement to system",
@@ -134,17 +138,17 @@
       }
     }
   },
-  "contact": {
-    "eyebrow": "Contact",
-    "heading": "Let's talk",
-    "body": "Open to work that sits between business analysis and system building. For professional enquiries, email is the fastest way to reach me.",
-    "cta": "Send a message",
-    "emailLabel": "Email",
-    "linkedinLabel": "LinkedIn",
-    "linkedinValue": "Professional profile",
-    "locationLabel": "Location",
-    "locationValue": "Riyadh, Saudi Arabia"
-  },
+"contact": {
+  "eyebrow": "Contact",
+  "heading": "Let's talk",
+  "body": "Open to work that sits between business analysis and system building. For professional enquiries, email is the fastest way to reach me.",
+  "cta": "Send a message",
+  "emailLabel": "Email",
+  "linkedinLabel": "LinkedIn",
+  "linkedinValue": "Professional profile",
+  "locationLabel": "Location",
+  "locationValue": "Riyadh, Saudi Arabia"
+},
   "footer": {
     "rights": "All rights reserved.",
     "role": "Business Systems Analyst"
@@ -188,6 +192,23 @@
           "Roles & permissions matrix",
           "Document coding standards",
           "Process improvement"
+        ]
+      },
+      "delivery": {
+        "title": "Systems & delivery",
+        "items": [
+          "ERP development",
+          "HR module design",
+          "Asset management module",
+          "IT support module",
+          "Procurement module",
+          "Data migration",
+          "Data validation & backup",
+          "End-user training delivery",
+          "System version upgrades",
+          "Website automation",
+          "Centralized CMS design",
+          "Web development & design"
         ]
       }
     }
