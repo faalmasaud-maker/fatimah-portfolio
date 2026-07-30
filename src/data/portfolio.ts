@@ -1,30 +1,30 @@
 /**
- * Structure only. Every user-facing string lives in messages/{ar,en}.json
- * and is looked up by the keys below.
- */
+* Structure only. Every user-facing string lives in messages/{ar,en}.json
+* and is looked up by the keys below.
+*/
 
 export type ProjectKey =
   | "erp"
-  | "hrms"
-  | "migration"
-  | "uat"
-  | "reporting"
-  | "cbahi";
+| "hrms"
+| "migration"
+| "uat"
+| "reporting"
+| "cbahi";
 
 export interface Project {
   key: ProjectKey;
   icon: string;
   /** Tailwind span classes for the 3-column bento grid. */
-  span: string;
+span: string;
   featured?: boolean;
 }
 
 /**
- * Bento layout, 3 columns:
- *   Row 1-2  erp (2 cols x 2 rows, featured)  |  hrms (1 col x 2 rows)
- *   Row 3    migration | uat | reporting      (1 x 1 each)
- *   Row 4    cbahi                            (3 cols x 1 row)
- */
+* Bento layout, 3 columns:
+* Row 1-2 erp (2 cols x 2 rows, featured) | hrms (1 col x 2 rows)
+* Row 3 migration | uat | reporting (1 x 1 each)
+* Row 4 cbahi (3 cols x 1 row)
+*/
 export const projects: Project[] = [
   {
     key: "erp",
@@ -37,19 +37,20 @@ export const projects: Project[] = [
   { key: "uat", icon: "ClipboardCheck", span: "md:col-span-1" },
   { key: "reporting", icon: "ChartNoAxesColumn", span: "md:col-span-1" },
   { key: "cbahi", icon: "PanelsTopLeft", span: "md:col-span-3" },
-];
+  ];
 
 export const stats = [
   { key: "experience" },
-  { key: "sectors" },
-  { key: "documentation" },
-] as const;
+  { key: "modules" },
+  { key: "systems" },
+  { key: "trainings" },
+  ] as const;
 
 export const pillars = [
   { key: "analysis", icon: "ScanSearch" },
   { key: "bridge", icon: "Waypoints" },
   { key: "value", icon: "Infinity" },
-] as const;
+  ] as const;
 
 export const contact = {
   email: "Fa.almasaud@gmail.com",
@@ -64,14 +65,15 @@ export const navLinks = [
   { key: "projects", href: "#projects" },
   { key: "cv", href: "#cv" },
   { key: "contact", href: "#contact" },
-] as const;
+  ] as const;
 
 /** Skill groups. Item labels live in messages/ under skills.groups.<key>.items */
 export const skillGroups = [
   { key: "analysis", icon: "ScanSearch" },
   { key: "reporting", icon: "FileText" },
   { key: "process", icon: "Workflow" },
-] as const;
+  { key: "delivery", icon: "Rocket" },
+  ] as const;
 
 /** Tools & software. Names/roles live in messages under tools.items.<key> */
 export const toolItems = [
@@ -87,7 +89,7 @@ export const toolItems = [
   { key: "m365", icon: "FileText" },
   { key: "n8n", icon: "Workflow" },
   { key: "ai", icon: "Sparkles" },
-] as const;
+  ] as const;
 
 export const cv = {
   /** Lives in /public/cv. The download attribute renames it on save. */
