@@ -33,18 +33,11 @@ export function CV() {
             />
 
             <div className="relative flex flex-col gap-7 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
-              <div className="flex items-start gap-5">
+              <div className="flex items-center gap-5">
                 <span className="grid h-14 w-14 shrink-0 place-items-center rounded-panel border border-white/20 bg-white/10 backdrop-blur-md">
                   <FileText className="h-6 w-6 text-white" strokeWidth={1.5} />
                 </span>
-                <div>
-                  <p className="text-lg font-semibold text-white">
-                    Fatimah AL Masaud — CV
-                  </p>
-                  <p className="mt-1.5 text-sm text-white/70">{t("fileMeta")}</p>
-                  <p className="mt-1 text-sm text-white/70">{t("updated")}</p>
-                  <p className="mt-1 text-sm text-white/70">{t("languages")}</p>
-                </div>
+                <p className="text-[0.9375rem] text-white/75">{t("fileMeta")}</p>
               </div>
 
               <a

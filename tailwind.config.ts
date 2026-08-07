@@ -50,10 +50,13 @@ const config: Config = {
            Each clamps down on small viewports so mobile keeps the
            proportions rather than inheriting desktop sizes. */
         "hero-xl": ["clamp(2.125rem, 7vw, 4.5rem)", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
-        "head-l": ["clamp(1.625rem, 3.6vw, 2.5rem)", { lineHeight: "1.14", letterSpacing: "-0.02em" }],
+        /* head-l floor lowered from 1.625rem: at 390px it rendered 27.6px,
+           larger than the display name (27px), which inverted the hierarchy. */
+        "head-l": ["clamp(1.375rem, 3.6vw, 2.5rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
         "head-m": ["clamp(1.0625rem, 1.7vw, 1.3125rem)", { lineHeight: "1.34", letterSpacing: "-0.01em" }],
-        body: ["1.0625rem", { lineHeight: "1.72" }],
-        caption: ["0.8125rem", { lineHeight: "1.45", letterSpacing: "0.01em" }],
+        body: ["clamp(1rem, 0.6vw + 0.86rem, 1.0625rem)", { lineHeight: "1.7" }],
+        /* caption floor raised from 0.8125rem (13.8px) — too small on phones. */
+        caption: ["clamp(0.875rem, 0.4vw + 0.79rem, 0.9375rem)", { lineHeight: "1.5", letterSpacing: "0.01em" }],
       },
       borderRadius: {
         btn: "14px",

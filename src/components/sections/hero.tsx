@@ -70,7 +70,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <p className="mt-7 max-w-xl text-head-l font-medium text-ink-primary">
+          <p className="tagline-ar mt-7 max-w-xl text-head-l font-medium text-ink-primary">
             {t("tagline")}
           </p>
           <p className="mt-3 max-w-xl text-body text-ink-secondary">
@@ -94,10 +94,13 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.24}>
-          <dl className="glass mt-16 grid max-w-3xl grid-cols-[repeat(4,minmax(0,1fr))] overflow-hidden rounded-card shadow-soft">
+          <dl className="glass mt-16 grid max-w-2xl grid-cols-2 overflow-hidden rounded-card shadow-soft sm:w-fit sm:max-w-full sm:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.key} className="min-w-0 px-3 py-5 sm:px-5 sm:py-6 [&+&]:border-s [&+&]:border-edge/70">
-                <dd className="font-sans text-2xl font-semibold tabular-nums text-ink-primary sm:text-3xl md:text-4xl">
+              <div
+                key={stat.key}
+                className="min-w-0 border-edge/70 px-4 py-5 [&:nth-child(n+3)]:border-t [&:nth-child(even)]:border-s sm:border-t-0 sm:px-6 sm:py-6 sm:[&+&]:border-s sm:[&:nth-child(n+3)]:border-t-0"
+              >
+                <dd className="font-sans text-[clamp(1.625rem,5vw,2.25rem)] font-semibold tabular-nums leading-none text-ink-primary">
                   {t(`stats.${stat.key}.value`)}
                 </dd>
                 <dt className="mt-2 text-caption text-ink-muted">

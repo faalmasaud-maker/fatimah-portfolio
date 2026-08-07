@@ -28,7 +28,7 @@ export function Membership() {
                 <ShieldCheck className="h-5 w-5 text-ink-primary" strokeWidth={1.5} />
               </span>
               <div className="min-w-0">
-                <p className="font-sans text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-ink-muted">
+                <p className="font-sans text-[0.75rem] font-medium uppercase tracking-[0.18em] text-ink-muted">
                   {t("issuerCode")}
                 </p>
                 <h3 className="mt-2 text-head-m font-semibold text-ink-primary">

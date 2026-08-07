@@ -23,10 +23,10 @@ export function Footer() {
           >
             {tHero("name_display")}
           </span>
-          <span className="text-[0.8125rem] text-ink-muted">{t("role")}</span>
+          <span className="text-[0.875rem] text-ink-muted">{t("role")}</span>
         </div>
 
-        <div className="flex flex-col gap-1 text-[0.8125rem] text-ink-muted sm:items-end">
+        <div className="flex flex-col gap-1 text-[0.875rem] text-ink-muted sm:items-end">
           <a
             href={`mailto:${contact.email}`}
             className="transition-colors duration-200 hover:text-ink-primary"

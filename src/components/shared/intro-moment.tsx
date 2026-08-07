@@ -20,7 +20,7 @@ export function IntroMoment() {
       setGone(true);
       return;
     }
-    const id = window.setTimeout(() => setGone(true), 1750);
+    const id = window.setTimeout(() => setGone(true), 2050);
     return () => window.clearTimeout(id);
   }, []);
 

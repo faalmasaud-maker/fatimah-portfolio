@@ -1,11 +1,11 @@
-import { FileText, ScanSearch, Workflow, Rocket } from "lucide-react";
+import { FileText, ScanSearch, Workflow } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { SignatureField } from "@/components/shared/signature-field";
 import { skillGroups } from "@/data/portfolio";
 
-const icons = { ScanSearch, FileText, Workflow, Rocket } as const;
+const icons = { ScanSearch, FileText, Workflow } as const;
 
 export function Skills() {
   const t = useTranslations("skills");

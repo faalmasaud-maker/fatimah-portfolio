@@ -57,7 +57,7 @@ export function Projects() {
                     strokeWidth={1.5}
                   />
                   {project.featured ? (
-                    <span className="rounded-full border border-edge px-2.5 py-1 font-sans text-[0.625rem] font-medium uppercase tracking-[0.16em] text-ink-muted">
+                    <span className="rounded-full border border-edge px-2.5 py-1 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-ink-muted">
                       {t("featuredLabel")}
                     </span>
                   ) : null}
@@ -85,7 +85,7 @@ export function Projects() {
                   {tags.map((tag) => (
                     <li
                       key={tag}
-                      className="rounded-full border border-edge-subtle bg-bg-base px-3 py-1 text-[0.8125rem] text-ink-muted"
+                      className="rounded-full border border-edge-subtle bg-bg-base px-3 py-1 text-[0.875rem] text-ink-muted"
                     >
                       {tag}
                     </li>

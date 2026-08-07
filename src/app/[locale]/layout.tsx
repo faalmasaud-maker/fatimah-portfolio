@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Tajawal } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
@@ -108,6 +109,9 @@ export default async function LocaleLayout({
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
+        {/* Vercel Web Analytics. Inert in development and on any host other
+            than Vercel; sends no cookies and needs no consent banner. */}
+        <Analytics />
       </body>
     </html>
   );

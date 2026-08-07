@@ -119,28 +119,30 @@
 .light {
   color-scheme: light;
 
-  /* No pure white anywhere. Three layered surfaces give real elevation:
-     #EEF2F8 canvas -> #F6F7FA card -> #FAFAFB raised. */
-  --bg-base: 215 43% 95%;
-  --bg-surface: 225 27% 97%;
-  --bg-elevated: 240 11% 98%;
+  /* Three layered surfaces give real elevation. Separation was measured and
+     widened: base->surface went from 10 to 19 RGB units, surface->elevated
+     from 5.2 to 9.7, so cards now read as lifted rather than flat. */
+  --bg-base: 214 44% 94%;
+  --bg-surface: 220 40% 98%;
+  --bg-elevated: 0 0% 100%;
   --bg-invert: 216 60% 10%;
 
-  --ink-primary: 216 60% 12%;
-  --ink-secondary: 219 28% 28%;
-  --ink-muted: 220 18% 40%;
-  --ink-subtle: 220 16% 58%;
+  --ink-primary: 217 64% 11%;
+  --ink-secondary: 219 30% 26%;
+  --ink-muted: 220 20% 38%;
+  --ink-subtle: 218 18% 56%;
   --ink-invert: 216 43% 98%;
 
-  --accent: 220 78% 40%;
-  --accent-deep: 227 55% 30%;
+  --accent: 220 80% 36%;
+  --accent-deep: 227 58% 28%;
 
-  --grad-1: 215 50% 90%;
-  --grad-2: 220 52% 78%;
-  --grad-3: 227 50% 62%;
+  --grad-1: 215 54% 88%;
+  --grad-2: 220 56% 76%;
+  --grad-3: 227 54% 60%;
 
-  --edge: 215 28% 85%;
-  --edge-strong: 215 24% 72%;
+  /* Borders were nearly invisible at 1.35:1 against a card; now 1.50:1. */
+  --edge: 215 32% 82%;
+  --edge-strong: 215 28% 68%;
   --edge-subtle: 215 34% 90%;
 
   --glass-tint: 240 20% 99%;
@@ -215,6 +217,12 @@
 
   html[dir="rtl"] body {
     @apply font-thmanyah-text;
+  }
+
+  /* Arabic glyphs sit taller, so the tagline needs a lower floor than the
+     Latin one or it out-sizes the display name on a phone. */
+  html[dir="rtl"] .tagline-ar {
+    font-size: clamp(1.1875rem, 3.2vw, 2.25rem);
   }
 
   html[dir="rtl"] h1,
@@ -435,23 +443,23 @@
   /* Opening moment — a navy field that blooms, draws a line of light,
      then lifts away. No text, so nothing to read and nothing to mis-shape. */
   .intro-veil {
-    animation: veil 1700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: veil 2000ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .intro-bloom {
-    animation: bloom 1700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: bloom 2000ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .intro-line-en {
-    animation: lift 900ms cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+    animation: lift 1000ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
   }
 
   .intro-rule {
-    animation: draw 1000ms cubic-bezier(0.22, 1, 0.36, 1) 260ms both;
+    animation: draw 1100ms cubic-bezier(0.22, 1, 0.36, 1) 340ms both;
   }
 
   .intro-line-ar {
-    animation: lift 900ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
+    animation: lift 1000ms cubic-bezier(0.16, 1, 0.3, 1) 560ms both;
   }
 
   @keyframes lift {
@@ -460,7 +468,7 @@
   }
 
   @keyframes veil {
-    0%, 68% { opacity: 1; transform: scale(1); filter: blur(0); }
+    0%, 72% { opacity: 1; transform: scale(1); filter: blur(0); }
     100% { opacity: 0; transform: scale(1.05); filter: blur(12px); visibility: hidden; }
   }
 
@@ -477,6 +485,28 @@
   }
 
 
+}
+
+
+
+@layer utilities {
+  /* Light mode carries elevation through shadow, not just tint — a pale
+     canvas hides borders, so cards need a real drop to separate. */
+  .light .card-depth,
+  .light .glass {
+    box-shadow:
+      0 1px 2px hsl(217 40% 30% / 0.06),
+      0 6px 16px -6px hsl(217 40% 30% / 0.10),
+      0 18px 40px -20px hsl(217 40% 30% / 0.14);
+  }
+
+  .light .card-depth:hover,
+  .light .glass:hover {
+    box-shadow:
+      0 2px 4px hsl(217 40% 30% / 0.08),
+      0 10px 24px -8px hsl(217 40% 30% / 0.14),
+      0 26px 56px -24px hsl(217 40% 30% / 0.18);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

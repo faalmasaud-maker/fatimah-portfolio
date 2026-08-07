@@ -1,4 +1,4 @@
-import { ArrowUpRight, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -14,6 +14,14 @@ export function Contact() {
       label: t("emailLabel"),
       value: contact.email,
       href: `mailto:${contact.email}`,
+      external: false,
+    },
+    {
+      key: "phone",
+      icon: Phone,
+      label: t("phoneLabel"),
+      value: contact.phone,
+      href: `tel:${contact.phoneIntl}`,
       external: false,
     },
     {
@@ -57,16 +65,21 @@ export function Contact() {
           </a>
         </Reveal>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {details.map((detail, i) => {
             const Icon = detail.icon;
             const inner = (
               <>
-                <Icon className="h-5 w-5 text-ink-muted transition-colors duration-200 group-hover:text-ink-primary" strokeWidth={1.5} />
-                <p className="mt-5 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-ink-muted">
-                  {detail.label}
-                </p>
-                <p className="mt-1.5 break-words text-[0.9375rem] text-ink-primary">
+                <div className="flex items-center gap-2.5 leading-none">
+                  <Icon
+                    className="h-[17px] w-[17px] shrink-0 translate-y-[0.5px] text-accent transition-colors duration-200 group-hover:text-ink-primary"
+                    strokeWidth={1.5}
+                  />
+                  <p className="font-sans text-[0.75rem] font-medium uppercase leading-none tracking-[0.16em] text-ink-muted">
+                    {detail.label}
+                  </p>
+                </div>
+                <p className="mt-3 break-words text-[0.9375rem] text-ink-primary">
                   {detail.value}
                 </p>
                 {detail.href ? (
